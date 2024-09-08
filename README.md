@@ -70,27 +70,50 @@ This project enables you to control up to 8 channels wirelessly using the **NRF2
 
 ## Pinout
 
-### NRF24L01 Module to Arduino Nano Pinout
+## NRF24L01 Arduino Pinout for Transmitter (TX) and Receiver (RX)
+
+### Transmitter (TX) NRF24L01 to Arduino Nano Pinout
 
 | **NRF24L01 Pin**        | **Arduino Nano Pin** | **Description**                   |
 |-------------------------|----------------------|------------------------------------|
 | GND                     | GND                  | Ground                            |
-| VCC                     | +5V                  | Power Supply (3.3V)                 |
+| VCC                     | +5V                  | Power Supply (5V)                 |
 | CE                      | D9                   | Chip Enable                       |
 | CSN                     | D10                  | Chip Select Not                   |
 | SCK                     | D13                  | Serial Clock (SPI)                |
 | MOSI                    | D11                  | Master Out Slave In (SPI)         |
 | MISO                    | D12                  | Master In Slave Out (SPI)         |
 
-### Additional Connections
+### Receiver (RX) NRF24L01 to Arduino Nano Pinout
+
+| **NRF24L01 Pin**        | **Arduino Nano Pin** | **Description**                   |
+|-------------------------|----------------------|------------------------------------|
+| GND                     | GND                  | Ground                            |
+| VCC                     | +5V                  | Power Supply (5V)                 |
+| CE                      | D9                   | Chip Enable                       |
+| CSN                     | D10                  | Chip Select Not                   |
+| SCK                     | D13                  | Serial Clock (SPI)                |
+| MOSI                    | D11                  | Master Out Slave In (SPI)         |
+| MISO                    | D12                  | Master In Slave Out (SPI)         |
+
+### Additional Connections (Common to TX and RX)
 
 | **Other Component**      | **Arduino Nano Pin** | **Description**                   |
 |--------------------------|----------------------|------------------------------------|
 | 10uF Capacitor            | Between VCC and GND  | Stabilizes voltage for NRF24L01    |
-| CH1 to CH8                | D0 to D7             | Servo Channels 1 to 8             |
+| CH1 to CH8 (RX Only)      | D0 to D7             | Servo Channels 1 to 8             |
 | Power Input (for Servo)   | External 5V-6V       | Power input for the servos         |
 | VCC (Arduino)             | VCC                  | 7V-9V Power Input                 |
 | GND (Arduino)             | GND                  | Ground                            |
+
+### Schematics
+
+#### Transmitter (TX)
+![Transmitter Schematic](https://github.com/40pet/40pet/blob/main/TX.jpg)
+
+#### Receiver (RX)
+![Receiver Schematic](https://github.com/40pet/40pet/blob/main/RX%20(1).jpg)
+
 
 For servos, connect each signal wire (usually yellow or orange) to the appropriate pin defined in the code and provide the servos with 5V power.
 
