@@ -126,4 +126,4 @@ For servos, connect each signal wire (usually yellow or orange) to the appropria
 Open a terminal and run:
 
 ```bash
-git clone https://github.com/yourusername/8-channel-nrf24l01-receiver.git
+git clone https://github.com/40pet/Radio-Control-using-Arduino-and-NRF.git
