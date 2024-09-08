@@ -1,4 +1,4 @@
-# 8-Channel NRF24L01 Wireless Control System
+# 8-Channel Radio Control using Arduino and NRF24L01
 
 This project is an **8-channel remote control system** using Arduino, **NRF24L01** wireless modules, and servo motors. It allows wireless communication between a transmitter and receiver, which can control up to 8 different servos or electronic speed controllers (ESCs). The system is ideal for RC vehicles, drones, robots, or any multi-channel control system.
 
