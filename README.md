@@ -70,53 +70,27 @@ This project enables you to control up to 8 channels wirelessly using the **NRF2
 
 ## Pinout
 
-### Receiver Pinout
+### NRF24L01 Module to Arduino Nano Pinout
 
-| **Component**            | **Function**           | **Pin**           | **Notes**                          |
-|--------------------------|------------------------|-------------------|------------------------------------|
-| **nRF24L01 Module**       | CE (Chip Enable)       | Pin 9             | SPI communication                 |
-|                          | CSN (Chip Select Not)  | Pin 10            | SPI communication                 |
-|                          | SCK (Clock)            | Hardware SPI (13) | SPI communication                 |
-|                          | MISO (Data Out)        | Hardware SPI (12) | SPI communication                 |
-|                          | MOSI (Data In)         | Hardware SPI (11) | SPI communication                 |
-| **Servo Motors**          | Channel 1 (Servo 1)    | Pin 3             | Controls Servo 1                  |
-|                          | Channel 2 (Servo 2)    | Pin 4             | Controls Servo 2                  |
-|                          | Channel 3 (Servo 3)    | Pin 5             | Controls Servo 3                  |
-|                          | Channel 4 (Servo 4)    | Pin 6             | Controls Servo 4                  |
-|                          | Channel 5 (Servo 5)    | Pin 7             | Controls Servo 5                  |
-|                          | Channel 6 (Servo 6)    | Pin 8             | Controls Servo 6                  |
-|                          | Channel 7 (Servo 7)    | Pin 9             | Controls Servo 7                  |
-|                          | Channel 8 (Servo 8)    | Pin 10            | Controls Servo 8                  |
+| **NRF24L01 Pin**        | **Arduino Nano Pin** | **Description**                   |
+|-------------------------|----------------------|------------------------------------|
+| GND                     | GND                  | Ground                            |
+| VCC                     | +5V                  | Power Supply (3.3V)                 |
+| CE                      | D9                   | Chip Enable                       |
+| CSN                     | D10                  | Chip Select Not                   |
+| SCK                     | D13                  | Serial Clock (SPI)                |
+| MOSI                    | D11                  | Master Out Slave In (SPI)         |
+| MISO                    | D12                  | Master In Slave Out (SPI)         |
 
-### Transmitter Pinout
+### Additional Connections
 
-| **Component**            | **Function**           | **Pin**           | **Notes**                           |
-|--------------------------|------------------------|-------------------|-------------------------------------|
-| **nRF24L01 Module**       | CE (Chip Enable)       | Pin 9             | SPI communication                  |
-|                          | CSN (Chip Select Not)  | Pin 10            | SPI communication                  |
-|                          | SCK (Clock)            | Hardware SPI (13) | SPI communication                  |
-|                          | MISO (Data Out)        | Hardware SPI (12) | SPI communication                  |
-|                          | MOSI (Data In)         | Hardware SPI (11) | SPI communication                  |
-| **Joysticks (Analog Input)** | Throttle              | Pin A0            | Analog input for throttle           |
-|                          | Yaw                    | Pin A1            | Analog input for yaw                |
-|                          | Pitch                  | Pin A2            | Analog input for pitch              |
-|                          | Roll                   | Pin A3            | Analog input for roll               |
-
----
-
-## Circuit Schematic
-
-You can wire the **NRF24L01 module** to the Arduino using the following connections:
-
-| **NRF24L01 Pin** | **Arduino Pin** |
-|------------------|-----------------|
-| VCC              | 3.3V            |
-| GND              | GND             |
-| CE               | 9               |
-| CSN              | 10              |
-| SCK              | 13              |
-| MOSI             | 11              |
-| MISO             | 12              |
+| **Other Component**      | **Arduino Nano Pin** | **Description**                   |
+|--------------------------|----------------------|------------------------------------|
+| 10uF Capacitor            | Between VCC and GND  | Stabilizes voltage for NRF24L01    |
+| CH1 to CH8                | D0 to D7             | Servo Channels 1 to 8             |
+| Power Input (for Servo)   | External 5V-6V       | Power input for the servos         |
+| VCC (Arduino)             | VCC                  | 7V-9V Power Input                 |
+| GND (Arduino)             | GND                  | Ground                            |
 
 For servos, connect each signal wire (usually yellow or orange) to the appropriate pin defined in the code and provide the servos with 5V power.
 
